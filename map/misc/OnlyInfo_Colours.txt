@@ -1,0 +1,52 @@
+#RGB values as 6 digit hex number and decimal
+
+#Units colours
+color.Germans=		Gray 	80.80.80		128.128.128
+color.Italians=					127.127.190
+color.Finns=					103.150.171
+color.Romanians=	CadetBlue 	5F.9E.A0  	95.158.160
+color.Japanese=					150.150.78
+color.Yamamoto=					150.150.78
+color.Hisaichi=					204.153.102
+color.Thai=					174.124.1
+color.Russians=					121.61.67
+						157.94.102
+color.British=					152.137.116
+color.French=					155.99.28
+color.Americans=					95.135.95
+color.Chinese=					170.120.170
+color.Anzac=					54.100.139
+color.Dutch=					225.0.0
+
+						182.127.106
+color.Neutral=		 	EB.EB.EB 	235.235.235 
+color.Impassible=		n.a.
+
+
+#Map colours....
+color.Germans=777777			119.119.119
+color.Italians=C9C9C9			201.201.201
+color.Finns=778899			119.136.153
+color.Romanians=7A8B8B			122.139.139
+color.Japanese=e6b937
+color.Yamamoto=e6b937
+color.Hisaichi=CC9966
+color.Thai=B8860B				184.134.11
+color.Russians=993300			153.51.0
+color.British=9C661F			156.102.31
+color.French=8B7355			139.115.85
+color.Americans=556B2F			85.107.47
+color.Chinese=964896
+color.Anzac=36648B			54.100.139
+color.Dutch=CC6633			204.102.51
+
+
+color.Neutral=CDBA96			205.186.150
+color.Impassible=DEB887			222.184.135
+color.Neutral_Skandinavia=4C90AE		76.144.174
+color.Neutral_Polish=336666			51.102.102
+color.Neutral_Spain=FFA500			255.165.0
+color.Neutral_Yugoslavia=36648B		54.100.139
+color.Neutral_Greece=00C78C		0.199.140
+color.Neutral_Turkey=CD0000		205.0.0
+color.Neutral_MidEast=008000		0.128.0

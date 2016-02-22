@@ -1,0 +1,25 @@
+Sea Zone 104 ... sz104
+zs96 ... sz101, because sz96 exists already
+Sea Zone 54 ... sz54
+Calcutta ... Madras
+San Fransisco ... San Francisco
+Nuernberg ... Bohemia
+Checheslovakya ... Hungary
+
+
+Updates for World_At_War_Variants.zip:
+
+Something you should know:
+A map can actually handle multiple centers.txt entries that are not used, or are different.
+
+So, what I did was updated the centers.txt, place.txt, and polygons.txt on both you zip and the WAW zip, to have both Sea Zone 104, and sz104, etc for all the changes you mentioned.
+I also changed WAW's xml to use the new names, as you suggested.
+The reason that I keep the old names inside centers.txt is because IF playerA downloads the new WAW, and playerB has the old WAW, then they will get errors when they try to play each other.
+
+You could change it into a map skin, and a variants file, if you wanted.  Thats up to you.  I couldn't see much difference, it just looked like you deleted the relief tiles.
+
+Anyway, these are the only changes made:
+
+1. Deleted all "thumbs.db" to save space.  they shouldn't be in the zip file anwyay.
+2. Changed name to World_At_War_Variants
+3. Using same centers, place, polygons as WAW, as i described above.
