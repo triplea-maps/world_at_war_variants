@@ -7521,7 +7521,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
       <boolean/>
     </property>
     <!-- Despite what this one says, it means the opposite.  If true, casualties from naval bombard will get to return fire. -->
-    <property name="Naval Bombard Casualties Return Fire Restricted" value="true" editable="false">
+    <property name="Naval Bombard Casualties Return Fire" value="true" editable="false">
       <boolean/>
     </property>
     <!-- if true, allied air on your carriers will participate in an attack -->
