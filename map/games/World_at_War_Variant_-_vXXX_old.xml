@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World At War Variant - vXXX" version="1.7.5"/>
+  <info name="World At War Variant - vXXX old" version="1.7.0"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <!-- triplea minimumVersion is the minimum version number of TripleA that can play this game.  Many new xmls require features not present in older versions of TripleA. Should be "xx.xx.xx.xx", "xx.xx.xx", "xx.xx", or "xx" -->
   <triplea minimumVersion="1.9.0.0"/>
@@ -2114,9 +2114,9 @@
     <player name="Thai" optional="false"/>
     <player name="Chinese" optional="false"/>
     <player name="Russians" optional="false"/>
+    <player name="Americans" optional="false"/>
     <player name="British" optional="false"/>
     <player name="French" optional="false"/>
-    <player name="Americans" optional="false"/>
     <player name="Anzac" optional="false"/>
     <player name="Dutch" optional="false"/>
     <!-- Axis alliance -->
@@ -2129,9 +2129,9 @@
     <!-- Allies alliance -->
     <alliance player="Chinese" alliance="Allies"/>
     <alliance player="Russians" alliance="Allies"/>
+    <alliance player="Americans" alliance="Allies"/>
     <alliance player="British" alliance="Allies"/>
     <alliance player="French" alliance="Allies"/>
-    <alliance player="Americans" alliance="Allies"/>
     <alliance player="Anzac" alliance="Allies"/>
     <alliance player="Dutch" alliance="Allies"/>
   </playerList>
@@ -2178,7 +2178,6 @@
     <unit name="AirbaseDover"/>
     <unit name="Radar"/>
     <unit name="Recruit"/>
-    <unit name="aNoFighterSBR"/>
   </unitList>
   <territoryEffectList>
 <territoryEffect name="Urban"/>
@@ -2215,12 +2214,12 @@
       <step name="chineseBid" delegate="bid" player="Chinese" maxRunCount="1"/>
       <step name="russiansBidPlace" delegate="placeBid" player="Russians" maxRunCount="1"/>
       <step name="russiansBid" delegate="bid" player="Russians" maxRunCount="1"/>
+      <step name="americansBidPlace" delegate="placeBid" player="Americans" maxRunCount="1"/>
+      <step name="americansBid" delegate="bid" player="Americans" maxRunCount="1"/>
       <step name="britishBidPlace" delegate="placeBid" player="British" maxRunCount="1"/>
       <step name="britishBid" delegate="bid" player="British" maxRunCount="1"/>
       <step name="frenchBidPlace" delegate="placeBid" player="French" maxRunCount="1"/>
       <step name="frenchBid" delegate="bid" player="French" maxRunCount="1"/>
-      <step name="americansBidPlace" delegate="placeBid" player="Americans" maxRunCount="1"/>
-      <step name="americansBid" delegate="bid" player="Americans" maxRunCount="1"/>
       <step name="anzacBidPlace" delegate="placeBid" player="Anzac" maxRunCount="1"/>
       <step name="anzacBid" delegate="bid" player="Anzac" maxRunCount="1"/>
       <step name="dutchBidPlace" delegate="placeBid" player="Dutch" maxRunCount="1"/>
@@ -2282,6 +2281,13 @@
       <step name="russiansPurchase" delegate="purchase" player="Russians"/>
       <step name="russiansPlace" delegate="place" player="Russians"/>
       <step name="russiansEndTurn" delegate="endTurn" player="Russians"/>
+      <!-- Americans Game Sequence -->
+      <step name="americansCombatMove" delegate="move" player="Americans"/>
+      <step name="americansBattle" delegate="battle" player="Americans"/>
+      <step name="americansNonCombatMove" delegate="move" player="Americans" display="Non Combat Move"/>
+      <step name="americansPurchase" delegate="purchase" player="Americans"/>
+      <step name="americansPlace" delegate="place" player="Americans"/>
+      <step name="americansEndTurn" delegate="endTurn" player="Americans"/>
       <!-- British Game Sequence -->
       <step name="britishCombatMove" delegate="move" player="British"/>
       <step name="britishBattle" delegate="battle" player="British"/>
@@ -2296,13 +2302,6 @@
       <step name="frenchPurchase" delegate="purchase" player="French"/>
       <step name="frenchPlace" delegate="place" player="French"/>
       <step name="frenchEndTurn" delegate="endTurn" player="French"/>
-      <!-- Americans Game Sequence -->
-      <step name="americansCombatMove" delegate="move" player="Americans"/>
-      <step name="americansBattle" delegate="battle" player="Americans"/>
-      <step name="americansNonCombatMove" delegate="move" player="Americans" display="Non Combat Move"/>
-      <step name="americansPurchase" delegate="purchase" player="Americans"/>
-      <step name="americansPlace" delegate="place" player="Americans"/>
-      <step name="americansEndTurn" delegate="endTurn" player="Americans"/>
       <!-- Anzac Game Sequence -->
       <step name="anzacCombatMove" delegate="move" player="Anzac"/>
       <step name="anzacBattle" delegate="battle" player="Anzac"/>
@@ -2508,10 +2507,6 @@
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="Radar" quantity="1"/>
     </productionRule>
-    <productionRule name="buyaNoFighterSBR">
-      <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="aNoFighterSBR" quantity="1"/>
-    </productionRule>
     <!-- REPAIR RULES -->
     <repairRule name="repairTrain">
       <cost resource="PUs" quantity="1"/>
@@ -2589,38 +2584,6 @@
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="AirTransport" quantity="1"/>
     </repairRule>
-   <repairRule name="repairDestroyer">
-      <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="Destroyer" quantity="1"/>
-    </repairRule>
-   <repairRule name="repairCruiser">
-      <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="Cruiser" quantity="1"/>
-    </repairRule>
-   <repairRule name="repairCarrier">
-      <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="Carrier" quantity="1"/>
-    </repairRule>
-   <repairRule name="repairBigCarrier">
-      <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="BigCarrier" quantity="1"/>
-    </repairRule>
-   <repairRule name="repairBattleship">
-      <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="Battleship" quantity="1"/>
-    </repairRule>
-   <repairRule name="repairSeaTransport">
-      <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="SeaTransport" quantity="1"/>
-    </repairRule>
-   <repairRule name="repairLandingBoat">
-      <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="LandingBoat" quantity="1"/>
-    </repairRule>
-   <repairRule name="repairaNoFighterSBR">
-      <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="aNoFighterSBR" quantity="1"/>
-    </repairRule>
     <repairFrontier name="repair">
       <repairRules name="repairTrain"/>
       <repairRules name="repairConstruction"/>
@@ -2641,14 +2604,6 @@
       <repairRules name="repairBomber"/>
       <repairRules name="repairBigBomber"/>
       <repairRules name="repairAirTransport"/>
-      <repairRules name="repairDestroyer"/>
-      <repairRules name="repairCruiser"/>
-      <repairRules name="repairCarrier"/>
-      <repairRules name="repairBigCarrier"/>
-      <repairRules name="repairBattleship"/>
-      <repairRules name="repairSeaTransport"/>
-      <repairRules name="repairLandingBoat"/>
-      <repairRules name="repairaNoFighterSBR"/>
     </repairFrontier>
     <!-- all players can use the same frontier, or you can have a different frontier for each player -->
     <!-- only "production" (a single production frontier) is needed for most maps. if you use ww2v2 tech then you need IndustrialTechnology production, and if you use ww2v3 tech you need Shipyards -->
@@ -2689,7 +2644,7 @@
       <frontierRules name="buyAirbase"/>
     </productionFrontier>
     <!-- Standard + BBomber -->
-    <!-- Germans, Japanese, Russians, British, Americans -->
+    <!-- Germans, Japanese, Russians, Americans, British -->
     <productionFrontier name="StandardBBom_production">
       <frontierRules name="buyInfantry"/>
       <frontierRules name="buyParatrooper"/>
@@ -3632,7 +3587,7 @@ and property "Give Units By Territory" is true -->
       <!-- "isLandTransport" allows the unit to transport "isInfantry" on a one-to-one basis, if you have the mechanizedInfantry technology -->
       <option name="isLandTransport" value="true"/>
       <option name="isInfrastructure" value="true"/>
-      <option name="destroyedWhenCapturedBy" value="Germans:Italians:Finns:Romanians:Japanese:Thai:Chinese:Russians:British:French:Americans:Anzac:Dutch"/>
+      <option name="destroyedWhenCapturedBy" value="Germans:Italians:Finns:Romanians:Japanese:Thai:Chinese:Russians:Americans:British:French:Anzac:Dutch"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="Train" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="6"/>
@@ -3654,7 +3609,7 @@ and property "Give Units By Territory" is true -->
       <option name="canBeDamaged" value="true"/>
       <option name="maxDamage" value="6"/>
       <option name="canDieFromReachingMaxDamage" value="true"/>
-      <option name="destroyedWhenCapturedBy" value="Germans:Italians:Finns:Romanians:Japanese:Thai:Chinese:Russians:British:French:Americans:Anzac:Dutch"/>
+      <option name="destroyedWhenCapturedBy" value="Germans:Italians:Finns:Romanians:Japanese:Thai:Chinese:Russians:Americans:British:French:Anzac:Dutch"/>
     </attachment>
     <!-- AIR UNIT SPECIFICATIONS -->
     <!--option name="movement" value="2"/-->
@@ -3706,7 +3661,7 @@ example: if you want a unit to throw a 12 sided die, then add 4 onto the result,
       <option name="isAir" value="true"/>
       <option name="isStrategicBomber" value="true"/>
       <option name="bombingMaxDieSides" value="1"/>
-      <option name="bombingTargets" value="RangeFighter:Me262:Fighter:DiveFighter:Bomber:BigBomber:AirTransport:Train:Construction:Radar:aNoFighterSBR"/>
+      <option name="bombingTargets" value="RangeFighter:Me262:Fighter:DiveFighter:Bomber:BigBomber:AirTransport:Train:Construction:Radar"/>
       <option name="canScramble" value="true"/>
       <option name="maxScrambleDistance" value="1"/>
       <option name="canEscort" value="true"/>
@@ -3748,7 +3703,7 @@ example: if you want a unit to throw a 12 sided die, then add 4 onto the result,
       <option name="isAir" value="true"/>
       <option name="isStrategicBomber" value="true"/>
       <option name="bombingMaxDieSides" value="1"/>
-      <option name="bombingTargets" value="RangeFighter:Me262:Fighter:DiveFighter:Bomber:BigBomber:AirTransport:Train:Construction:Radar:aNoFighterSBR"/>
+      <option name="bombingTargets" value="RangeFighter:Me262:Fighter:DiveFighter:Bomber:BigBomber:AirTransport:Train:Construction:Radar"/>
       <!-- canScramble and maxScrambleDistance are properties for scrambling. Allows the aircraft to enter a surrounding sea zone if the enemy is doing an attack on or from the surrounding sea zone. Needs property "Scramble Rules In Effect"-->
       <option name="canScramble" value="true"/>
       <option name="maxScrambleDistance" value="1"/>
@@ -3774,7 +3729,7 @@ example: if you want a unit to throw a 12 sided die, then add 4 onto the result,
       <option name="fuelCost" value="Fuel" count="2"/>
       <option name="isAir" value="true"/>
       <option name="isStrategicBomber" value="true"/>
-      <option name="bombingMaxDieSides" value="3"/>
+      <option name="bombingMaxDieSides" value="2"/>
       <option name="canScramble" value="true"/>
       <option name="maxScrambleDistance" value="1"/>
       <option name="canEscort" value="true"/>
@@ -3876,7 +3831,7 @@ currently only allows: unitsMayNotLandOnCarrier, unitsMayNotLeaveAlliedCarrier (
     <!--option name="whenCombatDamaged" value="unitsMayNotLeaveAlliedCarrier" count="1:1"/-->
     <!--option name="requiresUnits" value="Shipyard"/-->
     <attachment name="unitAttachment" attachTo="TorpedoBoat" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="movement" value="2"/>
+      <option name="movement" value="3"/>
       <option name="attack" value="1"/>
       <option name="defense" value="1"/>
       <option name="fuelCost" value="Fuel" count="2"/>
@@ -3909,13 +3864,6 @@ currently only allows: unitsMayNotLandOnCarrier, unitsMayNotLeaveAlliedCarrier (
       <option name="fuelCost" value="Fuel" count="4"/>
       <option name="isSea" value="true"/>
       <option name="isDestroyer" value="true"/>
-      <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="5"/>
-      <option name="canDieFromReachingMaxDamage" value="true"/>
-      <option name="isAAforBombingThisUnitOnly" value="true"/>
-      <option name="attackAA" value="1"/>
-      <option name="attackAAmaxDieSides" value="6"/>
-      <option name="targetsAA" value="DiveFighter:Bomber:BigBomber"/>
       <option name="requiresUnits" value="Shipyard:Recruit"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="Cruiser" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3929,13 +3877,6 @@ currently only allows: unitsMayNotLandOnCarrier, unitsMayNotLeaveAlliedCarrier (
       <option name="canBombard" value="true"/>
       <option name="bombard" value="2"/>
       <option name="hitPoints" value="2"/>
-      <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="9"/>
-      <option name="canDieFromReachingMaxDamage" value="true"/>
-      <option name="isAAforBombingThisUnitOnly" value="true"/>
-      <option name="attackAA" value="1"/>
-      <option name="attackAAmaxDieSides" value="6"/>
-      <option name="targetsAA" value="DiveFighter:Bomber:BigBomber"/>
       <option name="requiresUnits" value="Shipyard:Recruit"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="Carrier" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3951,13 +3892,6 @@ currently only allows: unitsMayNotLandOnCarrier, unitsMayNotLeaveAlliedCarrier (
       <option name="hitPoints" value="2"/>
       <option name="whenCombatDamaged" value="unitsMayNotLandOnCarrier" count="1:1"/>
       <option name="whenCombatDamaged" value="unitsMayNotLeaveAlliedCarrier" count="1:1"/>
-      <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="10"/>
-      <option name="canDieFromReachingMaxDamage" value="true"/>
-      <option name="isAAforBombingThisUnitOnly" value="true"/>
-      <option name="attackAA" value="1"/>
-      <option name="attackAAmaxDieSides" value="6"/>
-      <option name="targetsAA" value="DiveFighter:Bomber:BigBomber"/>
       <option name="requiresUnits" value="Shipyard:Recruit"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="BigCarrier" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3972,13 +3906,6 @@ currently only allows: unitsMayNotLandOnCarrier, unitsMayNotLeaveAlliedCarrier (
       <option name="hitPoints" value="3"/>
       <option name="whenCombatDamaged" value="unitsMayNotLandOnCarrier" count="2:2"/>
       <option name="whenCombatDamaged" value="unitsMayNotLeaveAlliedCarrier" count="2:2"/>
-      <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="15"/>
-      <option name="canDieFromReachingMaxDamage" value="true"/>
-      <option name="isAAforBombingThisUnitOnly" value="true"/>
-      <option name="attackAA" value="1"/>
-      <option name="attackAAmaxDieSides" value="6"/>
-      <option name="targetsAA" value="DiveFighter:Bomber:BigBomber"/>
       <option name="requiresUnits" value="Shipyard:Recruit"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="Battleship" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3990,13 +3917,6 @@ currently only allows: unitsMayNotLandOnCarrier, unitsMayNotLeaveAlliedCarrier (
       <option name="canBombard" value="true"/>
       <option name="bombard" value="3"/>
       <option name="hitPoints" value="3"/>
-      <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="15"/>
-      <option name="canDieFromReachingMaxDamage" value="true"/>
-      <option name="isAAforBombingThisUnitOnly" value="true"/>
-      <option name="attackAA" value="1"/>
-      <option name="attackAAmaxDieSides" value="6"/>
-      <option name="targetsAA" value="DiveFighter:Bomber:BigBomber"/>
       <option name="requiresUnits" value="Shipyard:Recruit"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="SeaTransport" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4006,9 +3926,6 @@ currently only allows: unitsMayNotLandOnCarrier, unitsMayNotLeaveAlliedCarrier (
       <option name="fuelCost" value="Fuel" count="4"/>
       <option name="isSea" value="true"/>
       <option name="transportCapacity" value="10"/>
-      <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="5"/>
-      <option name="canDieFromReachingMaxDamage" value="true"/>
       <option name="requiresUnits" value="Shipyard:Recruit"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="LandingBoat" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4019,9 +3936,6 @@ currently only allows: unitsMayNotLandOnCarrier, unitsMayNotLeaveAlliedCarrier (
       <option name="fuelCost" value="Fuel" count="2"/>
       <option name="isSea" value="true"/>
       <option name="transportCapacity" value="5"/>
-      <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="3"/>
-      <option name="canDieFromReachingMaxDamage" value="true"/>
       <option name="requiresUnits" value="Shipyard:Recruit"/>
     </attachment>
     <!-- STRUCTURE UNIT SPECIFICATIONS -->
@@ -4145,19 +4059,19 @@ examples: <option name="whenCapturedChangesInto" value="any:any:true:Minor_Facto
     <attachment name="unitAttachment" attachTo="Vehicle" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isInfrastructure" value="true"/>
       <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="7"/>
+      <option name="maxDamage" value="10"/>
       <option name="canDieFromReachingMaxDamage" value="true"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="Aircraft" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isInfrastructure" value="true"/>
       <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="8"/>
+      <option name="maxDamage" value="12"/>
       <option name="canDieFromReachingMaxDamage" value="true"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="Shipyard" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isInfrastructure" value="true"/>
       <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="10"/>
+      <option name="maxDamage" value="15"/>
       <option name="canDieFromReachingMaxDamage" value="true"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="Oilfield" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4203,7 +4117,7 @@ examples: <option name="whenCapturedChangesInto" value="any:any:true:Minor_Facto
       <option name="canBeDamaged" value="true"/>
       <option name="maxDamage" value="12"/>
       <option name="canDieFromReachingMaxDamage" value="true"/>
-      <option name="maxOperationalDamage" value="4"/>
+      <option name="maxOperationalDamage" value="2"/>
       <option name="requiresUnits" value="Construction"/>
       <option name="consumesUnits" value="1:Construction"/>
     </attachment>
@@ -4220,7 +4134,7 @@ examples: <option name="whenCapturedChangesInto" value="any:any:true:Minor_Facto
       <option name="givesMovement" value="3:Me262"/>
       <option name="givesMovement" value="2:Fighter"/>
       <option name="givesMovement" value="2:DiveFighter"/>
-      <option name="givesMovement" value="7:Bomber"/>
+      <option name="givesMovement" value="5:Bomber"/>
       <option name="givesMovement" value="7:BigBomber"/>
       <option name="givesMovement" value="0:AirTransport"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
@@ -4230,7 +4144,7 @@ examples: <option name="whenCapturedChangesInto" value="any:any:true:Minor_Facto
       <option name="canBeDamaged" value="true"/>
       <option name="maxDamage" value="12"/>
       <option name="canDieFromReachingMaxDamage" value="true"/>
-      <option name="maxOperationalDamage" value="4"/>
+      <option name="maxOperationalDamage" value="2"/>
       <option name="requiresUnits" value="Construction"/>
       <option name="consumesUnits" value="1:Construction"/>
     </attachment>
@@ -4249,16 +4163,6 @@ examples: <option name="whenCapturedChangesInto" value="any:any:true:Minor_Facto
       <option name="maxOperationalDamage" value="2"/>
       <option name="requiresUnits" value="Construction"/>
       <option name="consumesUnits" value="1:Construction"/>
-    </attachment>
-    <attachment name="unitAttachment" attachTo="aNoFighterSBR" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="movement" value="3"/>
-      <option name="canNotMoveDuringCombatMove" value="true"/>
-      <option name="carrierCost" value="0"/>
-      <option name="isAir" value="true"/>
-      <option name="isInfrastructure" value="true"/>
-      <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="1"/>
-      <option name="canDieFromReachingMaxDamage" value="false"/>
     </attachment>
     <!-- PLAYER ATTACHMENTS -->
     <!-- AXIS -->
@@ -4304,6 +4208,11 @@ must be a list of the player's names receiving units, in a ":" delimited list.  
       <option name="destroysPUs" value="true"/>
       <option name="giveUnitControl" value="Chinese"/>
     </attachment>
+    <attachment name="playerAttachment" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
+      <option name="destroysPUs" value="false"/>
+      <option name="retainCapitalNumber" value="1"/>
+      <option name="giveUnitControl" value="Russians:Chinese"/>
+    </attachment>
     <attachment name="playerAttachment" attachTo="British" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="destroysPUs" value="false"/>
       <option name="retainCapitalNumber" value="1"/>
@@ -4311,11 +4220,6 @@ must be a list of the player's names receiving units, in a ":" delimited list.  
     </attachment>
     <attachment name="playerAttachment" attachTo="French" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="destroysPUs" value="true"/>
-    </attachment>
-    <attachment name="playerAttachment" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
-      <option name="destroysPUs" value="false"/>
-      <option name="retainCapitalNumber" value="1"/>
-      <option name="giveUnitControl" value="Russians:Chinese"/>
     </attachment>
     <attachment name="playerAttachment" attachTo="Anzac" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="destroysPUs" value="false"/>
@@ -4421,6 +4325,19 @@ must be a list of the player's names receiving units, in a ":" delimited list.  
       <option name="victoryCity" value="1"/>
       <option name="changeUnitOwners" value="Russians"/>
     </attachment>
+    <attachment name="territoryAttachment" attachTo="Washington" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="9"/>
+      <option name="unitProduction" value="9"/>
+      <option name="territoryEffect" value="Urban"/>
+      <option name="capital" value="Americans"/>
+      <option name="victoryCity" value="1"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="San Francisco" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="12"/>
+      <option name="unitProduction" value="12"/>
+      <option name="territoryEffect" value="Urban"/>
+      <option name="victoryCity" value="1"/>
+    </attachment>
     <attachment name="territoryAttachment" attachTo="London" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="6"/>
       <option name="unitProduction" value="6"/>
@@ -4446,19 +4363,6 @@ must be a list of the player's names receiving units, in a ":" delimited list.  
       <option name="unitProduction" value="7"/>
       <option name="territoryEffect" value="Urban"/>
       <option name="capital" value="French"/>
-      <option name="victoryCity" value="1"/>
-    </attachment>
-    <attachment name="territoryAttachment" attachTo="Washington" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
-      <option name="production" value="9"/>
-      <option name="unitProduction" value="9"/>
-      <option name="territoryEffect" value="Urban"/>
-      <option name="capital" value="Americans"/>
-      <option name="victoryCity" value="1"/>
-    </attachment>
-    <attachment name="territoryAttachment" attachTo="San Francisco" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
-      <option name="production" value="12"/>
-      <option name="unitProduction" value="12"/>
-      <option name="territoryEffect" value="Urban"/>
       <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Melbourne" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -4817,8 +4721,8 @@ must be a list of the player's names receiving units, in a ":" delimited list.  
       <option name="production" value="2"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Syria" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
-      <option name="production" value="3"/>
-      <option name="unitProduction" value="3"/>
+      <option name="production" value="2"/>
+      <option name="unitProduction" value="2"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Mauretania" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -7954,7 +7858,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
       <value><![CDATA[
 <h1>--- WORLD AT WAR ---
 </h1>
-<h1>--- World At War Variant - vXXX ---
+<h1>--- World At War Variant - vXXX old ---
 </h1>
 <h2>================ CREDITS ==================
 
@@ -7962,7 +7866,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>Updates are available at:
 <br>https://sites.google.com/site/tripleamarshal/home/
 <br>and tripleamaps.
-<br>Last update: 2017-03-16, v1.7.5
+<br>Last update: 2016-10-29, v1.7.0
 <br>Game engine 1.9.0.0 required.
 <br>
 <h2>========== KNOWN ENGINE PROBLEMS ==========
@@ -8074,74 +7978,59 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>SeaTransport and Cruiser only unloading to an occupied territory.
 <br>
 <h2>---(4)---------------- Unit Rules -------------------
-</h2>
-<h2>---- Strategic bombing, incl. destruction ----:
-</h2>SBR done to Train, Construction, Bunker, Vehicle, Aircraft, Shipyard,
-<br>Refinery, Airbase, Radar and Factories.
-<br>SBR done to Destroyer, Cruiser, Carrier, BigCarrier, Battleship, SeaTransport, LandingBoat.
-<br>SBR can also be done to planes at a territory (destroy them on the ground), if
+
+</h2>---- Strategic bombing, incl. destruction ----:
+<br>SBR done to Train, Construction, Bunker, Vehicle, Aircraft, Shipyard,
+<br>Refinery, Radar, Airbase and Factories.
+<br>SBR can also be done to planes (destroy them on the ground), if
 <br>they were NOT intercepting !!!
-<br>To avoid destruction build more structure units (Airbase max. 1),
+<br>To avoid destruction build more units (Airbase max. 1),
 <br>otherwise 1 turn without unit placement.
 <br>Any Factory bombed according v3 rules incl. destruction.
 <br>
-<br>DiveFighter with 3 max. SBR damage.
+<br>DiveFighter with 2 max. SBR damage.
 <br>Bomber with 6 max. SBR damage.
 <br>BigBomber with 8 max. SBR damage.
 <br>
 <br>Fighter and RangeFighter with 1 max. SBR damage, only to selected targets:
-<br>All planes not intercepting (grounded), Train, Construction, Radar.
+<br>RangeFighter, Me262, Fighter, DiveFighter, Bomber, BigBomber, AirTransport, Train, Construction, Radar.
 <br>
 <br>Me262 has no SBR capability.
 <br>
-<h2>---- Max. bombing damage, afterwards destruction ----:
-</h2>Train 9
-<br>Construction 6
-<br>Bunker 6
-<br>Vehicle 7, Aircraft 8, Shipyard 10
-<br>Refinery 12, Airbase 12
-<br>Radar 6
+<br>---- Max. bombing damage, afterwards destruction ----:
+<br>Train 9, Construction 6, Bunker 6,
+<br>Vehicle 10, Aircraft 12, Shipyard 15, Refinery 12, Airbase 12, Radar 6.
 <br>Factory and FactoryAbroad 1 times territory PU.
-<br>Fighter + DiveFighter 2
-<br>RangeFighter + Me262 + AirTransport 3
-<br>Bomber 4, BigBomber 5
-<br>Destroyer 5
-<br>Cruiser 9
-<br>Carrier 10, BigCarrier 15
-<br>Battleship 15
-<br>SeaTransport 5, LandingBoat 3
+<br>Fighter + DiveFighter 2, RangeFighter + Me262 + AirTransport 3, Bomber 4, BigBomber 5.
 <br>
-<h2>---- Planes scrambling ----:
-</h2>All Fighters and Me262 can scramble 1 territory with Radar.
+<br>---- Planes scrambling ----:
+<br>All Fighters and Me262 can scramble 1 territory with Radar.
 <br>Scramles to any (also amphibious) assaults incl. air battles (e.g. SBR).
 <br>Radar is disabled with 3 damage.
 <br>
-<h2>---- Territory effects ----:
-</h2>In urban areas (territory with a circle) unit property is modified.
+<br>---- Territory effects ----:
+<br>In urban areas (territory with a circle) unit property is modified.
 <br>Infantry and Paratrooper defense +1.
 <br>Armour and BigArmour attack and defense -1
 <br>
-<h2>---- 2 AA gun types ----:
-</h2>---- AA for combat only ----:
-<br>Unit AAGun is an attack/defend AA with Hit 1 of 6. Attacks/defends also in normal battle.
+<br>---- 2 AA gun types ----:
+<br>Unit AAGun is an attack/defend AA for combat ONLY. AA Hit 1 of 6. Attacks/defends also in normal battle.
 <br>Unit AAGun may fire only 2 times its AA guns. So AAGuns should stack, to target more planes.
 <br>Unit AAGun targets: ALL planes excluding AirTransport.
 <br>
-<br>---- AA for SBR only ----:
-<br>Any Factory, Refinery, Airbase with Hit 1 of 12.
-<br>Destroyer, Cruiser, Carrier, BigCarrier, Battleship with Hit 1 of 6.
+<br>Any Factory, Refinery, Airbase have an AA for SBR only. Hit 1 of 12.
 <br>SBR AA targets: DiveFighter, Bomber, BigBomber.
 <br>
-<h2>---- Multiple hitPoints ----:
-</h2>Multiple hitPoints units are marked with a red triangle in the upper red corner.
+<br>---- Multiple hitPoints ----:
+<br>Multiple hitPoints units are marked with a red triangle in the upper red corner.
 <br>Normal units have 1 hitPoint.
 <br>BigArmour, SuperSub, Cruiser and Carrier have 2.
 <br>Bunker, BigCarrier and Battleship have 3.
 <br>Carrier (damage1) and BigCarrier (damage2) have CombatDamage,
 <br>this means unitsMayNotLandOnCarrier and unitsMayNotLeaveAlliedCarrier.
 <br>
-<h2>---- Units movement from Dover to Belgium, Lille ----:
-</h2>From Dover to Belgium, Lille direct connection ONLY for Airunits, to enable SBR British-Germans.
+<br>---- Units movement from Dover to Belgium, Lille ----:
+<br>From Dover to Belgium, Lille direct connection ONLY for Airunits, to enable SBR British-Germans.
 <br>
 <h2>---(5)------------- Change Unit Owners Rules ----------------
 
@@ -8167,7 +8056,6 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>
 <br>---- SBR done to Train, Construction, Bunker, Vehicle, Aircraft, Shipyard,
 <br>Refinery, Radar, Airbase and Factories.
-<br>SBR done to Destroyer, Cruiser, Carrier, BigCarrier, Battleship, SeaTransport, LandingBoat.
 <br>SBR can also be done to planes (destroy them on the ground), if they were NOT intercepting !!!
 <br>
 <br>---- Defense unit can not move alone, has to be transported.
@@ -8262,8 +8150,8 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>RangeFighter....... 2-2-6 ... # ... YES-YES-YES ... 2-2 ... # ... C9-F3 ... # ... Strat.Bomb max.1 to selected units
 <br>Me262................ 1-1-4 ... # ... YES-YES-YES ... 4-4 ... # ... C8-F3 ... # ... 
 <br>Fighter................ 1-1-4 ... # ... YES-YES-YES ... 3-3 ... # ... C7-F2 ... # ... Carrierspace 1, Strat.Bomb max.1 to selected units
-<br>DiveFighter......... 3-2-4 ... # ... YES-YES-YES ... 1-1 ... # ... C7-F2 ... # ... Carrierspace 1, Strat.Bomb max.3
-<br>Bomber............... 4-1-6 ... # ... YES-NO-YES ... 2-1 ... # ... C12-F4 ... # ... Strat.Bomb max.6, From AirbaseDover move 8
+<br>DiveFighter......... 3-2-4 ... # ... YES-YES-YES ... 1-1 ... # ... C7-F2 ... # ... Carrierspace 1, Strat.Bomb max.2
+<br>Bomber............... 4-1-6 ... # ... YES-NO-YES ... 2-1 ... # ... C12-F4 ... # ... Strat.Bomb max.6
 <br>BigBomber.......... 5-2-7 ... # ... YES-NO-YES ... 3-1 ... # ... C15-F5 ... # ... Strat.Bomb max.8, From AirbaseDover move 8
 <br>AirTransport....... 0-0-6 ... # ... YES-NO-YES ... 1-0 ... # ... C10-F4 ... # ... Para in COMBAT, Inf+Def+Recruit in NONCOMBAT
 <br>
@@ -8274,7 +8162,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>
 <br>--- ATTACK-DEFEND-MOVEMENT ... # ... COST-FUEL ... # ... ABILITY ---
 <br>
-<br>TorpedoBoat........ 1-1-2 ... # ... C6-F2 ... #
+<br>TorpedoBoat........ 1-1-3 ... # ... C6-F2 ... #
 <br>Submarine........... 2-1-2 ... # ... C7-F4 ... #
 <br>Super Sub........... 3-2-2 ... # ... C14-F4 ... # ... Hit 2
 <br>Destroyer............ 2-2-2 ... # ... C9-F4 ... #
@@ -8308,7 +8196,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <h2>============== TURN ORDER ===============
 
 </h2>Germans - Italians - Finns - Romanians - Japanese - Thai
-<br>Chinese - Russians - British - French - Americans - Anzac - Dutch
+<br>Chinese - Russians - Americans - British - French - Anzac - Dutch
 <br>
 <h2>============== OILFIELDS ===============
 
