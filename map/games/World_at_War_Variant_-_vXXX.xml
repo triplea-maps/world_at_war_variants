@@ -8264,8 +8264,8 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>Me262................ 1-1-4 ... # ... YES-YES-YES ... 4-4 ... # ... C8-F3 ... # ... 
 <br>Fighter................ 1-1-4 ... # ... YES-YES-YES ... 3-3 ... # ... C7-F2 ... # ... Carrierspace 1, Strat.Bomb max.1 to selected units
 <br>DiveFighter......... 3-2-4 ... # ... YES-YES-YES ... 1-1 ... # ... C7-F2 ... # ... Carrierspace 1, Strat.Bomb 2-3
-<br>Bomber............... 4-1-6 ... # ... YES-NO-YES ... 2-1 ... # ... C12-F4 ... # ... Strat.Bomb max.6, From AirbaseDover move 8
-<br>BigBomber.......... 5-2-7 ... # ... YES-NO-YES ... 3-1 ... # ... C15-F5 ... # ... Strat.Bomb max.8, From AirbaseDover move 8
+<br>Bomber............... 3-1-6 ... # ... YES-NO-YES ... 2-1 ... # ... C12-F4 ... # ... Strat.Bomb max.6, From AirbaseDover move 8
+<br>BigBomber.......... 4-2-7 ... # ... YES-NO-YES ... 3-1 ... # ... C15-F5 ... # ... Strat.Bomb max.8, From AirbaseDover move 8
 <br>AirTransport....... 0-0-6 ... # ... YES-NO-YES ... 1-0 ... # ... C10-F4 ... # ... Para in COMBAT, Inf+Def+Recruit in NONCOMBAT
 <br>
 <h2>--------------------------- Sea Units ---------------------
