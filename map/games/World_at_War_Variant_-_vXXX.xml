@@ -8086,7 +8086,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>otherwise 1 turn without unit placement.
 <br>Any Factory bombed according v3 rules incl. destruction.
 <br>
-<br>DiveFighter with 3 max. SBR damage.
+<br>DiveFighter with 2-3 SBR damage.
 <br>Bomber with 6 max. SBR damage.
 <br>BigBomber with 8 max. SBR damage.
 <br>
