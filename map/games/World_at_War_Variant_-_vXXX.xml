@@ -2454,7 +2454,7 @@
       <result resourceOrUnit="BigCarrier" quantity="1"/>
     </productionRule>
     <productionRule name="buyBattleship">
-      <cost resource="PUs" quantity="25"/>
+      <cost resource="PUs" quantity="24"/>
       <cost resource="Fuel" quantity="6"/>
       <result resourceOrUnit="Battleship" quantity="1"/>
     </productionRule>
@@ -3781,7 +3781,7 @@ example: if you want a unit to throw a 12 sided die, then add 4 onto the result,
       <option name="canEscort" value="true"/>
       <option name="canIntercept" value="true"/>
       <option name="canAirBattle" value="true"/>
-      <option name="airAttack" value="1"/>
+      <option name="airAttack" value="0"/>
       <option name="airDefense" value="1"/>
       <option name="canBeDamaged" value="true"/>
       <option name="maxDamage" value="2"/>
@@ -8263,7 +8263,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>RangeFighter....... 2-2-6 ... # ... YES-YES-YES ... 2-2 ... # ... C9-F3 ... # ... Strat.Bomb max.1 to selected units
 <br>Me262................ 1-1-4 ... # ... YES-YES-YES ... 4-4 ... # ... C8-F3 ... # ... 
 <br>Fighter................ 1-1-4 ... # ... YES-YES-YES ... 3-3 ... # ... C7-F2 ... # ... Carrierspace 1, Strat.Bomb max.1 to selected units
-<br>DiveFighter......... 3-2-4 ... # ... YES-YES-YES ... 1-1 ... # ... C7-F2 ... # ... Carrierspace 1, Strat.Bomb 2-3
+<br>DiveFighter......... 3-2-4 ... # ... YES-YES-YES ... 0-1 ... # ... C7-F2 ... # ... Carrierspace 1, Strat.Bomb 2-3
 <br>Bomber............... 3-1-6 ... # ... YES-NO-YES ... 2-1 ... # ... C12-F4 ... # ... Strat.Bomb max.6, From AirbaseDover move 8
 <br>BigBomber.......... 4-2-7 ... # ... YES-NO-YES ... 3-1 ... # ... C15-F5 ... # ... Strat.Bomb max.8, From AirbaseDover move 8
 <br>AirTransport....... 0-0-6 ... # ... YES-NO-YES ... 1-0 ... # ... C10-F4 ... # ... Para in COMBAT, Inf+Def+Recruit in NONCOMBAT
@@ -8282,7 +8282,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>Cruiser................ 3-3-2 ... # ... C17-F5 ... # ... Hit 2, Bombard 2, Transport-only land unit S2
 <br>Carrier................ 0-2-2 ... # ... C18-F5 ... # ... Hit 2, Carriercapacity 3 (3x Space1)
 <br>BigCarrier............ 0-2-2 ... # ... C27-F6 ... # ... Hit 3, Carriercapacity 5 (5x Space1)
-<br>Battleship............. 4-4-2 ... # ... C25-F6 ... # ... Hit 3, Bombard 3
+<br>Battleship............. 4-4-2 ... # ... C24-F6 ... # ... Hit 3, Bombard 3
 <br>SeaTransport....... 0-0-3 ... # ... C10-F4 ... # ... Transport-only land units S10
 <br>LandingBoat......... 0-0-2 ... # ... C6-F2 ... # ... Transport+Invade land units S5
 <br>
