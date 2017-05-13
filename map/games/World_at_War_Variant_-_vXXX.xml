@@ -4259,7 +4259,7 @@ examples: <option name="whenCapturedChangesInto" value="any:any:true:Minor_Facto
       <option name="isInfrastructure" value="true"/>
       <option name="canBeDamaged" value="true"/>
       <option name="maxDamage" value="1"/>
-      <option name="canDieFromReachingMaxDamage" value="false"/>
+      <option name="canDieFromReachingMaxDamage" value="true"/>
     </attachment>
     <!-- PLAYER ATTACHMENTS -->
     <!-- AXIS -->
