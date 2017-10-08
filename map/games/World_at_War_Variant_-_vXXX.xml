@@ -4245,7 +4245,7 @@ examples: <option name="whenCapturedChangesInto" value="any:any:true:Minor_Facto
       <option name="isAirBase" value="true"/>
       <option name="maxScrambleCount" value="2"/>
       <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="6"/>
+      <option name="maxDamage" value="5"/>
       <option name="canDieFromReachingMaxDamage" value="true"/>
       <option name="maxOperationalDamage" value="2"/>
       <option name="requiresUnits" value="Construction"/>
@@ -7963,7 +7963,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>Updates are available at:
 <br>https://sites.google.com/site/tripleamarshal/home/
 <br>and tripleamaps.
-<br>Last update: 2017-03-16, v1.7.5
+<br>Last update: 2017-10-08, v1.7.5
 <br>Game engine 1.9.0.0 required.
 <br>
 <h2>========== KNOWN ENGINE PROBLEMS ==========
@@ -8101,7 +8101,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>Bunker 6
 <br>Vehicle 7, Aircraft 8, Shipyard 10
 <br>Refinery 12, Airbase 12
-<br>Radar 6
+<br>Radar 5
 <br>Factory and FactoryAbroad 1 times territory PU.
 <br>Fighter + DiveFighter 2
 <br>RangeFighter + Me262 + AirTransport 3
