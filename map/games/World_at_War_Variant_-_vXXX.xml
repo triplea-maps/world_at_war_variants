@@ -8218,8 +8218,8 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>SBR done to planes at a territory or carrier (destroy them on the ground), if
 <br>they were NOT intercepting !!!
 <br>
-<br>---- SBR max. bombing damage ----:
-<br>DiveFighter with 2-3 SBR damage, against all targets.
+<h2>---- SBR max. bombing damage ----:
+</h2>DiveFighter with 2-3 SBR damage, against all targets.
 <br>
 <br>Bomber with 6 max. SBR damage, only to selected targets.
 <br>Against structure, land units (Artillery, Katyusha), ships, planes.
