@@ -8422,7 +8422,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>----------------------------------------------------------------- # ... COST-FUEL ... # ... ABILITY ---
 <br>
 <br>RangeFighter....... 2-2-6 ... # ... YES-YES-YES ... 2-2 ... # ... C9-F3 ... # ... Strat.Bomb max.1 to selected units
-<br>Me262................ 1-1-4 ... # ... YES-YES-YES ... 4-4 ... # ... C8-F3 ... # ... 
+<br>Me262................ 1-1-4 ... # ... YES-YES-YES ... 4-5 ... # ... C8-F3 ... # ... 
 <br>Fighter................ 1-1-4 ... # ... YES-YES-YES ... 3-3 ... # ... C7-F2 ... # ... Carrierspace 1, Strat.Bomb max.1 to selected units
 <br>DiveFighter......... 3-2-4 ... # ... YES-YES-YES ... 0-1 ... # ... C7-F2 ... # ... Carrierspace 1, Strat.Bomb 2-4
 <br>Bomber............... 3-1-6 ... # ... YES-NO-YES ... 2-1 ... # ... C12-F4 ... # ... Strat.Bomb max.6, From AirbaseDover move 8
