@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World At War Variant - vXXX" version="1.7.7"/>
+  <info name="World At War Variant - vXXX" version="1.7.8"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <!-- triplea minimumVersion is the minimum version number of TripleA that can play this game.  Many new xmls require features not present in older versions of TripleA. Should be "xx.xx.xx.xx", "xx.xx.xx", "xx.xx", or "xx" -->
   <triplea minimumVersion="1.9.0.0"/>
@@ -3709,6 +3709,13 @@ and property "Give Units By Territory" is true -->
       <!-- "isLandTransport" allows the unit to transport "isInfantry" on a one-to-one basis, if you have the mechanizedInfantry technology -->
       <option name="isLandTransport" value="true"/>
       <option name="isInfrastructure" value="true"/>
+      <option name="canBeDamaged" value="true"/>
+      <option name="maxDamage" value="2"/>
+      <option name="canDieFromReachingMaxDamage" value="true"/>
+      <option name="isAAforBombingThisUnitOnly" value="true"/>
+      <option name="attackAA" value="1"/>
+      <option name="attackAAmaxDieSides" value="12"/>
+      <option name="targetsAA" value="aNoFighterSBR"/>
       <option name="destroyedWhenCapturedBy" value="Germans:Italians:Finns:Romanians:Japanese:Thai:Chinese:Russians:British:French:Americans:Anzac:Dutch"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="Train" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3791,8 +3798,9 @@ example: if you want a unit to throw a 12 sided die, then add 4 onto the result,
       <option name="isAir" value="true"/>
       <option name="isStrategicBomber" value="true"/>
       <option name="bombingMaxDieSides" value="1"/>
+      <option name="bombingTargets" value="Artillery:Katyusha"/>
       <option name="bombingTargets" value="RangeFighter:Me262:Fighter:DiveFighter:Bomber:BigBomber:AirTransport:aNoFighterSBR"/>
-      <option name="bombingTargets" value="Train:Construction:Radar"/>
+      <option name="bombingTargets" value="LandTransport:Train:Construction:Radar"/>
       <option name="canScramble" value="true"/>
       <option name="maxScrambleDistance" value="1"/>
       <option name="canEscort" value="true"/>
@@ -3818,7 +3826,7 @@ example: if you want a unit to throw a 12 sided die, then add 4 onto the result,
       <option name="canIntercept" value="true"/>
       <option name="canAirBattle" value="true"/>
       <option name="airAttack" value="4"/>
-      <option name="airDefense" value="4"/>
+      <option name="airDefense" value="5"/>
       <option name="canBeDamaged" value="true"/>
       <option name="maxDamage" value="3"/>
       <option name="canDieFromReachingMaxDamage" value="true"/>
@@ -3834,8 +3842,9 @@ example: if you want a unit to throw a 12 sided die, then add 4 onto the result,
       <option name="isAir" value="true"/>
       <option name="isStrategicBomber" value="true"/>
       <option name="bombingMaxDieSides" value="1"/>
+      <option name="bombingTargets" value="Artillery:Katyusha"/>
       <option name="bombingTargets" value="RangeFighter:Me262:Fighter:DiveFighter:Bomber:BigBomber:AirTransport:aNoFighterSBR"/>
-      <option name="bombingTargets" value="Train:Construction:Radar"/>
+      <option name="bombingTargets" value="LandTransport:Train:Construction:Radar"/>
       <!-- canScramble and maxScrambleDistance are properties for scrambling. Allows the aircraft to enter a surrounding sea zone if the enemy is doing an attack on or from the surrounding sea zone. Needs property "Scramble Rules In Effect"-->
       <option name="canScramble" value="true"/>
       <option name="maxScrambleDistance" value="1"/>
@@ -3861,7 +3870,7 @@ example: if you want a unit to throw a 12 sided die, then add 4 onto the result,
       <option name="fuelCost" value="Fuel" count="2"/>
       <option name="isAir" value="true"/>
       <option name="isStrategicBomber" value="true"/>
-      <option name="bombingMaxDieSides" value="2"/>
+      <option name="bombingMaxDieSides" value="3"/>
       <option name="bombingBonus" value="1"/>
       <option name="canScramble" value="true"/>
       <option name="maxScrambleDistance" value="1"/>
@@ -8086,7 +8095,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>Updates are available at:
 <br>https://github.com/triplea-maps/world_at_war_variants/archive/master.zip
 <br>and tripleamaps and client map download.
-<br>Last update: 2018-03-04, v1.7.7
+<br>Last update: 2018-05-02, v1.7.8
 <br>Game engine 1.9.0.0 required.
 <br>
 <h2>========== KNOWN ENGINE PROBLEMS ==========
@@ -8201,7 +8210,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 </h2>
 <h2>---(4.1)---- Strategic bombing raid, incl. destruction ----:
 </h2>---- SBR to structural units ----:
-<br>SBR done to Train, Construction, Bunker, Vehicle, Aircraft, Shipyard,
+<br>SBR done to LandTransport, Train, Construction, Bunker, Vehicle, Aircraft, Shipyard,
 <br>Refinery, Airbase, Radar and Factories.
 <br>
 <br>To avoid destruction build more structure units (Airbase max. 1),
@@ -8219,7 +8228,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>they were NOT intercepting !!!
 <br>
 <h2>---- SBR max. bombing damage ----:
-</h2>DiveFighter with 2-3 SBR damage, against all targets.
+</h2>DiveFighter with 2-4 SBR damage, against all targets.
 <br>
 <br>Bomber with 6 max. SBR damage, only to selected targets.
 <br>Against structure, land units (Artillery, Katyusha), ships, planes.
@@ -8228,12 +8237,13 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>Against structure, land units (Artillery, Katyusha), ships, planes.
 <br>
 <br>Fighter and RangeFighter with 1 max. SBR damage, only to selected targets.
-<br>Against structure (Train, Construction, Radar), planes not intercepting (grounded).
+<br>Against structure (LandTransport, Train, Construction, Radar), land units (Artillery, Katyusha), planes not intercepting (grounded).
 <br>
 <br>Me262 has no SBR capability.
 <br>
 <h2>---(4.2)---- SBR max. unit bombing damage, afterwards destruction ----:
-</h2>Train 9
+</h2>LandTransport 2
+<br>Train 9
 <br>Construction 6
 <br>Bunker 6
 <br>Vehicle 7, Aircraft 8, Shipyard 10
@@ -8271,7 +8281,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>Halftrack, Armour, BigArmour with Hit 1 of 12.
 <br>SBR AA targets: DiveFighter.
 <br>
-<br>Train, Construction, Bunker, Vehicle, Aircraft, Shipyard, Radar with NONE AA for SBR.
+<br>LandTransport, Train, Construction, Bunker, Vehicle, Aircraft, Shipyard, Radar with NONE AA for SBR.
 <br>Artillery, Katyusha, Defense with NONE AA for SBR.
 <br>
 <h2>---(4.4)---- Planes scrambling ----:
@@ -8414,7 +8424,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>RangeFighter....... 2-2-6 ... # ... YES-YES-YES ... 2-2 ... # ... C9-F3 ... # ... Strat.Bomb max.1 to selected units
 <br>Me262................ 1-1-4 ... # ... YES-YES-YES ... 4-4 ... # ... C8-F3 ... # ... 
 <br>Fighter................ 1-1-4 ... # ... YES-YES-YES ... 3-3 ... # ... C7-F2 ... # ... Carrierspace 1, Strat.Bomb max.1 to selected units
-<br>DiveFighter......... 3-2-4 ... # ... YES-YES-YES ... 0-1 ... # ... C7-F2 ... # ... Carrierspace 1, Strat.Bomb 2-3
+<br>DiveFighter......... 3-2-4 ... # ... YES-YES-YES ... 0-1 ... # ... C7-F2 ... # ... Carrierspace 1, Strat.Bomb 2-4
 <br>Bomber............... 3-1-6 ... # ... YES-NO-YES ... 2-1 ... # ... C12-F4 ... # ... Strat.Bomb max.6, From AirbaseDover move 8
 <br>BigBomber.......... 4-2-7 ... # ... YES-NO-YES ... 3-1 ... # ... C15-F5 ... # ... Strat.Bomb max.8, From AirbaseDover move 8
 <br>AirTransport....... 0-0-6 ... # ... YES-NO-YES ... 1-0 ... # ... C10-F4 ... # ... Para in COMBAT, Inf+Def+Recruit in NONCOMBAT
