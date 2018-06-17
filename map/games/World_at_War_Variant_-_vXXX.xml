@@ -2513,14 +2513,6 @@
       <result resourceOrUnit="aNoFighterSBR" quantity="1"/>
     </productionRule>
     <!-- REPAIR RULES -->
-    <repairRule name="repairTrain">
-      <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="Train" quantity="1"/>
-    </repairRule>
-    <repairRule name="repairConstruction">
-      <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="Construction" quantity="1"/>
-    </repairRule>
     <repairRule name="repairBunker">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="Bunker" quantity="1"/>
@@ -2589,6 +2581,18 @@
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="Defense" quantity="1"/>
     </repairRule>
+    <repairRule name="repairLandTransport">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="LandTransport" quantity="1"/>
+    </repairRule>
+    <repairRule name="repairTrain">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Train" quantity="1"/>
+    </repairRule>
+    <repairRule name="repairConstruction">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Construction" quantity="1"/>
+    </repairRule>
     <repairRule name="repairRangeFighter">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="RangeFighter" quantity="1"/>
@@ -2650,8 +2654,6 @@
       <result resourceOrUnit="aNoFighterSBR" quantity="1"/>
     </repairRule>
     <repairFrontier name="repair">
-      <repairRules name="repairTrain"/>
-      <repairRules name="repairConstruction"/>
       <repairRules name="repairBunker"/>
       <repairRules name="repairFactoryAbroad"/>
       <repairRules name="repairFactory"/>
@@ -2669,6 +2671,9 @@
       <repairRules name="repairKatyusha"/>
       <repairRules name="repairAAGun"/>
       <repairRules name="repairDefense"/>
+      <repairRules name="repairLandTransport"/>
+      <repairRules name="repairTrain"/>
+      <repairRules name="repairConstruction"/>
       <repairRules name="repairRangeFighter"/>
       <repairRules name="repairMe262"/>
       <repairRules name="repairFighter"/>
