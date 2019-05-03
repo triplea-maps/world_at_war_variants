@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World At War Variant - vXXX" version="1.7.8"/>
+  <info name="World At War Variant - vXXX" version="1.7.9"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <!-- triplea minimumVersion is the minimum version number of TripleA that can play this game.  Many new xmls require features not present in older versions of TripleA. Should be "xx.xx.xx.xx", "xx.xx.xx", "xx.xx", or "xx" -->
   <triplea minimumVersion="1.9.0.0"/>
@@ -3562,7 +3562,7 @@ and property "Give Units By Territory" is true -->
       <option name="unitSupportCount" value="1"/>
       <option name="canBeGivenByTerritoryTo" value="Russians:Chinese"/>
       <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="4"/>
+      <option name="maxDamage" value="3"/>
       <option name="canDieFromReachingMaxDamage" value="true"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <option name="attackAA" value="1"/>
@@ -3598,7 +3598,7 @@ and property "Give Units By Territory" is true -->
       <option name="unitSupportCount" value="1"/>
       <option name="canBeGivenByTerritoryTo" value="Russians:Chinese"/>
       <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="4"/>
+      <option name="maxDamage" value="3"/>
       <option name="canDieFromReachingMaxDamage" value="true"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <option name="attackAA" value="1"/>
@@ -3618,7 +3618,7 @@ and property "Give Units By Territory" is true -->
       <option name="isInfantry" value="true"/>
       <option name="canBeGivenByTerritoryTo" value="Russians:Chinese"/>
       <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="5"/>
+      <option name="maxDamage" value="4"/>
       <option name="canDieFromReachingMaxDamage" value="true"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <option name="attackAA" value="1"/>
@@ -3638,7 +3638,7 @@ and property "Give Units By Territory" is true -->
       <option name="isInfantry" value="true"/>
       <option name="hitPoints" value="2"/>
       <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="8"/>
+      <option name="maxDamage" value="6"/>
       <option name="canDieFromReachingMaxDamage" value="true"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <option name="attackAA" value="1"/>
@@ -3659,7 +3659,7 @@ and property "Give Units By Territory" is true -->
       <option name="artillery" value="true"/>
       <option name="unitSupportCount" value="2"/>
       <option name="canBeDamaged" value="true"/>
-      <option name="maxDamage" value="4"/>
+      <option name="maxDamage" value="3"/>
       <option name="canDieFromReachingMaxDamage" value="true"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <option name="attackAA" value="1"/>
@@ -8119,7 +8119,7 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>Updates are available at:
 <br>https://github.com/triplea-maps/world_at_war_variants/archive/master.zip
 <br>and tripleamaps and client map download.
-<br>Last update: 2018-05-18, v1.7.8
+<br>Last update: 2019-05-03, v1.7.9
 <br>Game engine 1.9.0.0 required.
 <br>
 <h2>========== KNOWN ENGINE PROBLEMS ==========
@@ -8281,9 +8281,9 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
 <br>Radar 6
 <br>Factory and FactoryAbroad 1 times territory PU.
 <br>
-<br>Artillery, Halftrack, Katyusha 4
-<br>Armour 5
-<br>BigArmour 8
+<br>Artillery, Halftrack, Katyusha 3
+<br>Armour 4
+<br>BigArmour 6
 <br>Defense 3
 <br>
 <br>Fighter + DiveFighter 2
