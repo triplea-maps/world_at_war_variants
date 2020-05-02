@@ -4281,7 +4281,7 @@ examples: <option name="whenCapturedChangesInto" value="any:any:true:Minor_Facto
       <option name="constructionType" value="Factory"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
       <option name="maxConstructionsPerTypePerTerr" value="1"/>
-      <option name="canOnlyBePlacedInTerritoryValuedAtX" value="1"/>
+      <option name="canOnlyBePlacedInTerritoryValuedAtX" value="2"/>
       <option name="canProduceUnits" value="true"/>
       <option name="canProduceXUnits" value="-1"/>
       <option name="canBeDamaged" value="true"/>
@@ -4302,7 +4302,7 @@ examples: <option name="whenCapturedChangesInto" value="any:any:true:Minor_Facto
       <option name="constructionType" value="Factory"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
       <option name="maxConstructionsPerTypePerTerr" value="1"/>
-      <option name="canOnlyBePlacedInTerritoryValuedAtX" value="1"/>
+      <option name="canOnlyBePlacedInTerritoryValuedAtX" value="2"/>
       <option name="special" value="canOnlyPlaceInOriginalTerritories"/>
       <option name="canProduceUnits" value="true"/>
       <option name="canProduceXUnits" value="-1"/>
@@ -5036,8 +5036,8 @@ must be a list of the player's names receiving units, in a ":" delimited list.  
       <option name="production" value="2"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Syria" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
-      <option name="production" value="3"/>
-      <option name="unitProduction" value="3"/>
+      <option name="production" value="2"/>
+      <option name="unitProduction" value="2"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Mauretania" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
