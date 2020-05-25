@@ -7856,11 +7856,6 @@ example: <option name="excludedUnits" value="submarine:fighter:bomber:air_transp
     <property name="Rockets Can Fly Over Impassables" value="false" editable="false">
       <boolean/>
     </property>
-    <!-- Pacific Theater does 4 things: allows nations to gain VictoryPoints by capturing PUs, allows Strategic Bombing to destroy VPs,
-								allows NoPU purchases (ww2v3 does also), and allows an additional purchase in NOPU purchases if you control the Burma Road
-				<property name="Pacific Theater" value="false" editable="false">
-						<boolean/>
-				</property>-->
     <!-- Do we charge for fuel when we move units? -->
     <property name="Use Fuel Cost" value="true" editable="true">
       <boolean/>
