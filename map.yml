@@ -1,0 +1,5 @@
+map_name: world_at_war_variants
+games:
+- {game_name: World At War Variant - v3, file_name: World_at_War_Variant_-_v3.xml}
+- {game_name: World At War Variant - FUEL-AA-Range, file_name: World_at_War_Variant_-_FUEL-AA-Range.xml}
+- {game_name: World At War Variant - vXXX, file_name: World_at_War_Variant_-_vXXX.xml}
